@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: checkout_raw
+    database: sandbox-edeveer
+    tables:
+      - name: users_extract
+        description: Raw users data
+        loaded_at_field: load_date
+        freshness: 
+          warn_after: {count: 25, period: hour}
+      - name: pageviews_extract
+        description: Raw pageviews data
+        loaded_at_field: load_timestamp
+        freshness: 
+          warn_after: {count: 2, period: hour}

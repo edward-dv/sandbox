@@ -1,0 +1,18 @@
+version: 2
+
+models:
+    - name: pageviews
+      description: Pageviews data for reporting and analysis.
+      columns:
+        - name: user_id
+          description: Identifier for users.
+          tests:
+            - not_null
+        - name: page_url
+          description: URL of the page visited.
+          tests:
+            - not_null
+        - name: pageview_datetime
+          description: Date and time of when the user visited the page.
+          tests:
+            - not_null

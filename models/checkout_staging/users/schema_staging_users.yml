@@ -1,0 +1,18 @@
+version: 2
+
+models:
+    - name: staging_users
+      description: Staged users data with preliminary transformations from raw
+      columns:
+        - name: id
+          description: Identifier for users
+          tests:
+            - not_null
+        - name: postcode
+          description: User postcode at the time of load
+          tests:
+            - not_null
+        - name: load_date
+          description: Extract loading date
+          tests:
+            - not_null
