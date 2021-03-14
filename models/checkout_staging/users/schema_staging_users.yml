@@ -5,14 +5,35 @@ models:
       description: Staged users data with preliminary transformations from raw
       columns:
         - name: id
-          description: Identifier for users
+          description: Identifier for users.
           tests:
             - not_null
         - name: postcode
-          description: User postcode at the time of load
+          description: Postcode the user was in between dbt_valid_from and dbt_valid_to.
           tests:
             - not_null
         - name: load_date
           description: Extract loading date
+          tests:
+            - not_null
+        - name: dbt_scd_id
+          description: ID generate by dbt for the slowly changing dimension.
+          tests:
+            - not_null
+        - name: dbt_scd_id
+          description: ID generate by dbt for the slowly changing dimension.
+          tests:
+            - not_null
+            - unique
+        - name: dbt_updated_at
+          description: Date when the dataset was updated by dbt.
+          tests:
+            - not_null
+        - name: dbt_valid_from
+          description: Date created by dbt snapshot to indicate start of validity of dimension status.
+          tests:
+            - not_null
+        - name: dbt_valid_to
+          description: Date created by dbt snapshot to indicate end of validity of dimension status.
           tests:
             - not_null

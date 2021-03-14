@@ -12,6 +12,9 @@
 }}
 
 SELECT *
-FROM {{ ref('intermediate_users') }}
+  FROM {{ source('checkout_raw','users_extract') }}   AS ru
+  JOIN {{ this }}                                     AS su
+    ON su.id = ru.id
+ WHERE ru.postcode != su.postcode
 
 {% endsnapshot %}
