@@ -2,7 +2,7 @@ version: 2
 
 models:
     - name: staging_users
-      description: Staged users data with preliminary transformations from raw
+      description: Staged users data from raw, updated via snapshot materialization (adds new records when changes exist without overwritting historicals).
       columns:
         - name: id
           description: Identifier for users.

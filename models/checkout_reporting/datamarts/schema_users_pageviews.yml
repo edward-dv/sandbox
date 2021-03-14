@@ -17,7 +17,7 @@ models:
           tests:
             - not_null
         - name: postcode
-          description: User postcode corresponding to each pageview.
+          description: Postcode where the user was at the time of the pageview.
           tests:
             - not_null
         - name: postcode_index
