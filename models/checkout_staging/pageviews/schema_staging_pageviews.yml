@@ -2,7 +2,7 @@ version: 2
 
 models:
     - name: staging_pageviews
-      description: Staged pageview data with preliminary transformations from raw
+      description: Staged pageview data from raw, updated via incremental materialization (only appends new records to existing table).
       columns:
         - name: user_id
           description: Identifier for users.

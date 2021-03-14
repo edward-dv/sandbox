@@ -15,6 +15,7 @@ SELECT *
   FROM {{ source('checkout_raw','users_extract') }}   AS ru
   JOIN {{ this }}                                     AS su
     ON su.id = ru.id
+ -- Only add a new row when there is a change in postcode
  WHERE ru.postcode != su.postcode
 
 {% endsnapshot %}
