@@ -12,6 +12,6 @@
 }}
 
 SELECT *
-FROM {{ source('checkout_staging','intermediate_users') }}
+FROM {{ ref('intermediate_users') }}
 
 {% endsnapshot %}

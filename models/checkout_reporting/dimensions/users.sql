@@ -16,4 +16,4 @@ SELECT
     , ROW_NUMBER() OVER (PARTITION BY id
         ORDER BY dbt_valid_from DESC)                   AS postcode_index
         
-FROM {{ source('checkout_staging','staging_users') }}  
+FROM {{ ref('staging_users') }}  

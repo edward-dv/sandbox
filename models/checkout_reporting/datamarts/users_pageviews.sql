@@ -15,8 +15,8 @@ prep AS (
             THEN u.postcode
         END                                                 AS postcode
         , u.postcode_index
-    FROM {{ source('checkout_reporting','pageviews') }}     AS pv
-    JOIN {{ source('checkout_reporting','users') }}         AS u
+    FROM {{ ref('pageviews') }}     AS pv
+    JOIN {{ ref('users') }}         AS u
       ON u.user_id = pv.user_id
 )
 
