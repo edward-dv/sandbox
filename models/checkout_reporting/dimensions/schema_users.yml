@@ -12,11 +12,11 @@ models:
           description: User postcode.
           tests:
             - not_null
-        - name: dbt_valid_from
+        - name: postcode_valid_from
           description: Start date for when the user was in the specified postcode.
           tests:
             - not_null        
-        - name: dbt_valid_to
+        - name: postcode_valid_to
           description: End date for when the user was in the specified postcode. If null, then 2099-01-01.
           tests:
             - not_null

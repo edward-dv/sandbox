@@ -5,14 +5,14 @@ models:
       description: Staged pageview data with preliminary transformations from raw
       columns:
         - name: user_id
-          description: Identifier for users
+          description: Identifier for users.
           tests:
             - not_null
         - name: page_url
-          description: URL of the page visited
+          description: URL of the page visited.
           tests:
             - not_null
         - name: pageview_datetime
-          description: Date and time of when the user visited the page
+          description: Date and time of the page visit.
           tests:
             - not_null
