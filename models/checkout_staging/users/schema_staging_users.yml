@@ -35,5 +35,3 @@ models:
             - not_null
         - name: dbt_valid_to
           description: Date created by dbt snapshot to indicate end of validity of dimension status.
-          tests:
-            - not_null
