@@ -10,10 +10,10 @@ prep AS (
         , pv.pageview_datetime
         -- Results in the postcode the user was in at the time of the page view
         , CASE 
-            WHEN CAST(pv.pageview_datetime AS DATE) >= u.dbt_valid_from 
-             AND CAST(pv.pageview_datetime AS DATE) < u.dbt_valid_to 
+            WHEN CAST(pv.pageview_datetime AS DATE) >= u.postcode_valid_from 
+             AND CAST(pv.pageview_datetime AS DATE) < u.postcode_valid_to 
             THEN u.postcode
-        END                                                 AS postcode
+        END                         AS postcode
         , u.postcode_index
     FROM {{ ref('pageviews') }}     AS pv
     JOIN {{ ref('users') }}         AS u
