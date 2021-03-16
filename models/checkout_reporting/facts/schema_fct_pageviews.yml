@@ -1,18 +1,14 @@
 version: 2
 
 models:
-    - name: pageviews
+    - name: fct_pageviews
       description: Pageviews data for reporting and analysis.
       columns:
+        - name: pageview_id
+          description: Surrogate key for pageviews. Generated based on user_id, page_url, pageview_datetime.
         - name: user_id
           description: Identifier for users.
-          tests:
-            - not_null
         - name: page_url
           description: URL of the page visited.
-          tests:
-            - not_null
         - name: pageview_datetime
           description: Date and time of when the user visited the page.
-          tests:
-            - not_null
