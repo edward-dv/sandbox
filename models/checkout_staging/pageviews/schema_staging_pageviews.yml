@@ -4,6 +4,11 @@ models:
     - name: staging_pageviews
       description: Staged pageview data from raw, updated via incremental materialization (only appends new records to existing table).
       columns:
+        - name: pageview_id
+          description: Surrogate key for pageviews. Generated based on user_id, page_url, pageview_datetime.
+          tests:
+            - not_null
+            - unique
         - name: user_id
           description: Identifier for users.
           tests:
@@ -14,5 +19,9 @@ models:
             - not_null
         - name: pageview_datetime
           description: Date and time of the page visit.
+          tests:
+            - not_null
+        - name: load_timestamp
+          description: Extract load timestamp.
           tests:
             - not_null

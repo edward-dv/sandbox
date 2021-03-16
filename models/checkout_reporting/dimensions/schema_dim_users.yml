@@ -1,24 +1,18 @@
 version: 2
 
 models:
-    - name: users
+    - name: dim_users
       description: Users data for reporting and analysis.
       columns:
         - name: user_id
           description: Identifier for users.
-          tests:
-            - not_null
         - name: postcode
           description: User postcode.
-          tests:
-            - not_null
         - name: postcode_valid_from
-          description: Start date for when the user was in the specified postcode.
-          tests:
-            - not_null        
+          description: Start date for when the user was in the specified postcode.       
         - name: postcode_valid_to
           description: End date for when the user was in the specified postcode. If null, then 2099-01-01.
-          tests:
-            - not_null
         - name: postcode_index
           description: Index = 1 corresponds to the latest postcode of a user.
+          tests:
+            - not_null
