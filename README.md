@@ -1,15 +1,7 @@
-Welcome to your new dbt project!
+Checkout task pipeline:
 
-### Using the starter project
+checkout_raw models correspond to the raw data extracts.
+checkout_staging connects to the raw tables and implements the first transformations and tests.
+checkout_reporting contains the finalized tables intended for analysis and visualization tools. The main two questions regarding the task can be answered using the users_pageviews table inside the datamarts folder.
 
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](http://slack.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+To run the entire pipeline, use the "primary_schedule" job in the Jobs section of dbt Cloud.
